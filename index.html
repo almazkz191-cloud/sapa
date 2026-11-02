@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SapaMebel — сапалы әрі заманауи жиһаз дүкені." />
+  <title>SapaMebel — жиһаз дүкені</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="SapaMebel басты бет">
+      <span class="brand-mark">S</span><span>Sapa<span class="gold">Mebel</span></span>
+    </a>
+    <nav>
+      <a href="#home">Басты бет</a>
+      <a href="#catalog">Каталог</a>
+      <a href="#about">Біз туралы</a>
+      <a href="#contacts">Байланыс</a>
+    </nav>
+    <button class="btn btn-dark" id="openLogin">Жеке кабинет</button>
+  </header>
+
+  <main id="publicPage">
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">ҮЙІҢІЗГЕ СӘН МЕН ЖАЙЛЫЛЫҚ</p>
+        <h1>Сапалы жиһаз.<br><span>Жайлы өмір.</span></h1>
+        <p class="hero-text">SapaMebel — үйіңізге үйлесім мен жайлылық сыйлайтын заманауи жиһаздар.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#catalog">Каталогты көру</a>
+          <a class="btn btn-outline" href="#about">Біз туралы</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>5+</strong><small>жыл тәжірибе</small></div>
+          <div><strong>500+</strong><small>риза клиент</small></div>
+          <div><strong>100%</strong><small>сапаға көңіл</small></div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85" alt="Заманауи қонақ бөлме интерьері" />
+        <div class="image-note"><span class="dot"></span> Жайлылық әр бөлшекте</div>
+      </div>
+    </section>
+
+    <section class="section" id="catalog">
+      <div class="section-head">
+        <div><p class="eyebrow">БІЗДІҢ ӨНІМДЕР</p><h2>Таңдаулы жиһаздар</h2></div>
+        <p>Үйіңіздің әр бөлмесіне арналған стильді шешімдер.</p>
+      </div>
+      <div class="filters">
+        <input id="searchProducts" type="search" placeholder="Жиһаз іздеу..." aria-label="Жиһаз іздеу" />
+        <select id="categoryFilter" aria-label="Санат бойынша сүзу">
+          <option value="all">Барлық санат</option>
+          <option value="Диван">Диван</option><option value="Үстел">Үстел</option>
+          <option value="Орындық">Орындық</option><option value="Шкаф">Шкаф</option>
+        </select>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="about-image"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1100&q=85" alt="Жайлы заманауи интерьер" /></div>
+      <div class="about-copy">
+        <p class="eyebrow">SAPAMEBEL ТУРАЛЫ</p>
+        <h2>Әр үйге лайық<br><span>ерекше жайлылық</span></h2>
+        <p>SapaMebel — сапаға, қолайлылыққа және заманауи дизайнға мән беретін жиһаз дүкені. Біз сіздің үйіңізге жарасымды жиһаз таңдауға көмектесеміз.</p>
+        <ul class="check-list"><li>✓ Сапалы материалдар</li><li>✓ Заманауи дизайн</li><li>✓ Клиентке жеке көзқарас</li><li>✓ Тапсырысты бақылау мүмкіндігі</li></ul>
+      </div>
+    </section>
+
+    <section class="contact section" id="contacts">
+      <div><p class="eyebrow">БАЙЛАНЫС</p><h2>Сұрағыңыз бар ма?</h2><p>Бізге хабарласыңыз — таңдауыңызға көмектесеміз.</p></div>
+      <div class="contact-card"><p><small>Телефон</small><strong>+7 (700) 000-00-00</strong></p><p><small>Мекенжай</small><strong>Қазақстан</strong></p><p><small>Жұмыс уақыты</small><strong>Дс–Жс: 09:00–19:00</strong></p></div>
+    </section>
+  </main>
+
+  <main id="dashboardPage" class="dashboard hidden">
+    <aside class="sidebar">
+      <a class="brand side-brand" href="#"><span class="brand-mark">S</span><span>Sapa<span class="gold">Mebel</span></span></a>
+      <p class="side-label">ЖЕКЕ КАБИНЕТ</p>
+      <button class="side-link store-link" id="backToStore">←　Дүкенге қайту</button>
+      <button class="side-link active" data-tab="overview">▦　Шолу</button>
+      <button class="side-link" data-tab="orders">▤　Тапсырыстар</button>
+      <button class="side-link admin-only" data-tab="products">▧　Тауарлар</button>
+      <button class="side-link admin-only" data-tab="users">♙　Клиенттер</button>
+      <button class="side-link" data-tab="profile">⚙　Профиль</button>
+      <button class="side-link logout" id="logoutBtn">↪　Шығу</button>
+    </aside>
+    <section class="dash-content">
+      <div class="dash-top"><div><p class="eyebrow">ҚОШ КЕЛДІҢІЗ</p><h1 id="welcomeTitle">Жеке кабинет</h1></div><span class="role-pill" id="rolePill">Клиент</span></div>
+      <section id="tab-overview" class="tab-panel">
+        <div class="stat-grid" id="statGrid"></div>
+        <div class="panel"><div class="panel-head"><h3>Соңғы тапсырыстар</h3><button class="text-btn" data-goto="orders">Барлығын көру →</button></div><div id="recentOrders"></div></div>
+      </section>
+      <section id="tab-orders" class="tab-panel hidden">
+        <div class="panel"><div class="panel-head"><h3>Тапсырыстар</h3></div><div id="ordersTable"></div></div>
+      </section>
+      <section id="tab-products" class="tab-panel hidden">
+        <div class="panel"><div class="panel-head"><h3>Тауарларды басқару</h3><button class="btn btn-gold" id="addProductBtn">+ Тауар қосу</button></div><div id="adminProducts"></div></div>
+      </section>
+      <section id="tab-users" class="tab-panel hidden">
+        <div class="panel"><div class="panel-head"><h3>Клиенттер</h3></div><div id="usersTable"></div></div>
+      </section>
+      <section id="tab-profile" class="tab-panel hidden">
+        <div class="panel profile-panel"><h3>Профиль мәліметтері</h3><label>Аты-жөні<input id="profileName" /></label><label>Email<input id="profileEmail" type="email" disabled /></label><button class="btn btn-gold" id="saveProfile">Сақтау</button></div>
+      </section>
+    </section>
+  </main>
+
+  <div class="modal-backdrop hidden" id="authModal">
+    <div class="modal">
+      <button class="modal-close" id="closeLogin" aria-label="Жабу">×</button>
+      <p class="eyebrow">SAPAMEBEL ACCOUNT</p><h2 id="authTitle">Жеке кабинетке кіру</h2>
+      <div class="auth-switch"><button class="active" id="loginMode">Кіру</button><button id="registerMode">Тіркелу</button></div>
+      <form id="authForm">
+        <label id="nameField" class="hidden">Аты-жөніңіз<input id="authName" placeholder="Аты-жөніңіз" /></label>
+        <label>Email<input id="authEmail" type="email" placeholder="example@mail.com" required /></label>
+        <label>Құпиясөз<input id="authPassword" type="password" placeholder="Кемінде 4 таңба" minlength="4" required /></label>
+        <p class="form-error" id="authError"></p>
+        <button class="btn btn-dark full" type="submit" id="authSubmit">Кіру</button>
+      </form>
+      <p class="demo-hint">Демо админ: <b>admin@sapamebel.kz</b> / <b>admin123</b></p>
+    </div>
+  </div>
+
+  <div class="modal-backdrop hidden" id="productModal">
+    <div class="modal"><button class="modal-close" id="closeProduct">×</button><p class="eyebrow">ТАУАР БАСҚАРУ</p><h2>Тауар қосу / өзгерту</h2>
+      <form id="productForm"><input type="hidden" id="editProductId" /><label>Тауар атауы<input id="pName" required /></label><label>Санат<select id="pCategory"><option>Диван</option><option>Үстел</option><option>Орындық</option><option>Шкаф</option></select></label><label>Бағасы (₸)<input id="pPrice" type="number" min="1" required /></label><label>Сурет URL<input id="pImage" placeholder="https://..." /></label><label>Сипаттамасы<textarea id="pDescription" rows="3"></textarea></label><button class="btn btn-gold full">Сақтау</button></form>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+  <footer><span>© 2026 SapaMebel</span><span>Сапа • Стиль • Жайлылық</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
